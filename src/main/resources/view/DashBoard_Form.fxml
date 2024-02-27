@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="768.0" prefWidth="1320.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.DashBoardController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1320.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Project%20Photo/R.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="25.0" layoutY="11.0" opacity="0.15" prefHeight="742.0" prefWidth="1294.0" style="-fx-background-color: #eceff1; -fx-background-radius: 20;" />
+      <AnchorPane fx:id="child" layoutX="238.0" layoutY="90.0" opacity="0.84" prefHeight="645.0" prefWidth="1067.0" style="-fx-background-color: #eceff1; -fx-background-radius: 10;" />
+      <Label layoutX="28.0" layoutY="16.0" opacity="0.23" prefHeight="732.0" prefWidth="202.0" style="-fx-background-color: #4db6ac; -fx-background-radius: 50;" />
+      <Label layoutX="39.0" layoutY="38.0" prefHeight="34.0" prefWidth="195.0" text="BookWorm" textFill="#a8ffc8">
+         <font>
+            <Font name="Algerian" size="32.0" />
+         </font>
+      </Label>
+      <TextField layoutX="241.0" layoutY="39.0" onAction="#searchinOnAction" prefHeight="31.0" prefWidth="309.0" style="-fx-background-radius: 50;" text="searching......" />
+      <Button fx:id="bt1" layoutX="28.0" layoutY="142.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="49.0" prefWidth="202.0" style="-fx-background-radius: 50;" text="DashBoard" AnchorPane.rightAnchor="1090.0" />
+      <Button fx:id="bt2" layoutX="28.0" layoutY="225.0" mnemonicParsing="false" onAction="#userOnAction" prefHeight="49.0" prefWidth="202.0" style="-fx-background-radius: 50;" text="User" />
+      <Button fx:id="bt3" layoutX="28.0" layoutY="303.0" mnemonicParsing="false" onAction="#BookOnAction" prefHeight="49.0" prefWidth="202.0" style="-fx-background-radius: 50;" text="Book" />
+      <Button fx:id="bt4" layoutX="28.0" layoutY="384.0" mnemonicParsing="false" onAction="#borrowOnAction" prefHeight="49.0" prefWidth="202.0" style="-fx-background-radius: 50;" text="Borrow" />
+      <Button fx:id="bt5" layoutX="28.0" layoutY="465.0" mnemonicParsing="false" onAction="#branchOnAction" prefHeight="49.0" prefWidth="202.0" style="-fx-background-radius: 50;" text="Branch" />
+      <ImageView fitHeight="69.0" fitWidth="59.0" layoutX="93.0" layoutY="576.0" onMouseClicked="#lblExits" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/exits.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="contact" layoutX="645.0" layoutY="40.0" onMouseClicked="#lblContactOnAction" opacity="0.56" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #eceff1; -fx-background-radius: 20;" text="   Contact" textFill="#140505">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmb" layoutX="782.0" layoutY="38.0" onAction="#cmbOnAction" opacity="0.58" prefWidth="150.0" promptText="language" style="-fx-background-radius: 20;" />
+      <Label fx:id="link" layoutX="959.0" layoutY="37.0" opacity="0.57" prefHeight="31.0" prefWidth="263.0" style="-fx-background-color: #eceff1; -fx-background-radius: 20;" text="                www.bookworm.lk" />
+      <ImageView fitHeight="49.0" fitWidth="39.0" layoutX="1256.0" layoutY="25.0" onMouseClicked="#lblClick" opacity="0.31" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/hamburger-.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
