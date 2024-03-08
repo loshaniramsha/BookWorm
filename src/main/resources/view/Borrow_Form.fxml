@@ -30,7 +30,6 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cmbUserId" layoutX="59.0" layoutY="191.0" onAction="#cmbOnAction" prefHeight="31.0" prefWidth="266.0" style="-fx-background-radius: 20;" />
       <ComboBox fx:id="cmbbookId" layoutX="68.0" layoutY="272.0" onAction="#cmbBookOnAction" prefHeight="31.0" prefWidth="266.0" style="-fx-background-radius: 20;" />
       <Text layoutX="73.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Id">
          <font>
@@ -63,5 +62,6 @@
             <TableColumn fx:id="coldueDate" prefWidth="258.0" text="Due Date" />
         </columns>
       </TableView>
+      <TextField fx:id="textUserid" layoutX="68.0" layoutY="196.0" prefHeight="31.0" prefWidth="266.0" promptText="User Id" />
    </children>
 </AnchorPane>
