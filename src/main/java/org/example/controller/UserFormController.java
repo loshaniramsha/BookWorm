@@ -44,7 +44,21 @@ public class UserFormController {
         }
     }
 
-    public void searchOnAction(ActionEvent actionEvent) {
+    public void searchOnAction(ActionEvent actionEvent) throws Exception{
+        String id=textId.getText();
+        try {
+            Userdto userdto=userBO.searchUser(id);
+            if (userdto!=null){
+                textName.setText(userdto.getU_name());
+                textEmail.setText(userdto.getEmail());
+                textPassword.setText(userdto.getPassword());
+            }else {
+                new Alert(Alert.AlertType.WARNING,"Empty").show();
+            }
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
     }
 
     public void saveOnAction(ActionEvent actionEvent) throws Exception {

@@ -29,7 +29,8 @@ public class UserBOimpl implements UserBO {
 
     @Override
     public Userdto searchUser(String id) throws Exception {
-        return null;
+        User user=userDAO.search(id);
+        return new Userdto(user.getU_id(), user.getU_name(), user.getEmail(), user.getPassword());
     }
 
     @Override
