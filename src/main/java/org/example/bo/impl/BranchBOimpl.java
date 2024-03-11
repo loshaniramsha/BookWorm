@@ -20,17 +20,18 @@ public class BranchBOimpl implements BranchBO {
 
     @Override
     public boolean updateBranch(Branchdto dto) throws Exception {
-        return false;
+       return branchDAO.update(new Branch(dto.getBranchId(),dto.getLocation(),null));
     }
 
     @Override
     public boolean deleteBranch(String id) throws Exception {
-        return false;
+        return branchDAO.delete(id);
     }
 
     @Override
     public Branchdto searchBranch(String id) throws Exception {
-        return null;
+       Branch branch= branchDAO.search(id);
+       return new Branchdto(branch.getBranchId(),branch.getLocation());
     }
 
     @Override

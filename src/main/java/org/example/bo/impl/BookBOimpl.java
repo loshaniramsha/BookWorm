@@ -27,31 +27,35 @@ public class BookBOimpl implements BookBO {
 
     @Override
     public boolean updateBook(Bookdto dto) throws Exception {
-        return false;
+      Branch search = branchDAO.search(dto.getBranchId());
+        System.out.println(dto.getBranchId());
+        return bookDAO.update(new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(), search,null));
     }
 
     @Override
     public boolean deleteBook(String id) throws Exception {
-        return false;
+       return bookDAO.delete(id);
     }
 
     @Override
     public Bookdto searchBook(String id) throws Exception {
-        return null;
+        Book search = bookDAO.search(id);
+        return new Bookdto(search.getBookId(), search.getTitle(), search.getAuthor(), search.getGenre(), search.getStatus(), search.getBranch().getBranchId());
+ /*       Book search = bookDAO.search(id);
+        if (search != null) {
+            return new Bookdto(search.getBookId(), search.getTitle(), search.getAuthor(), search.getGenre(), search.getStatus(), search.getBranch().getBranchId());
+        } else {
+            return null;
+        }*/
     }
 
     @Override
     public List<Bookdto> getAllBook() throws Exception {
      List<Book> all= bookDAO.getAll();
-     if (all != null) {
-         List<Bookdto> list=new ArrayList<>();
-         for (Book book : all) {
-             list.add(new Bookdto(book.getBookId(),book.getTitle(),book.getAuthor(),book.getGenre(),book.getStatus(),book.getBranch().getBranchId()));
-         }
-         return list;
-     } else {
-         return null;
+     List<Bookdto> list=new ArrayList<>();
+     for (Book book : all) {
+         list.add(new Bookdto(book.getBookId(),book.getTitle(),book.getAuthor(),book.getGenre(),book.getStatus(),book.getBranch().getBranchId()));
      }
-
+    return list;
  }
 }

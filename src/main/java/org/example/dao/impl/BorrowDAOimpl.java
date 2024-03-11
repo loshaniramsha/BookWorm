@@ -26,17 +26,39 @@ public class BorrowDAOimpl implements BorrowDAO {
 
     @Override
     public boolean update(Borrow dto) throws Exception {
-        return false;
+       Session session=FactoryConfiguration.getInstance().getSession();
+       Transaction transaction= session.beginTransaction();
+
+       Borrow borrow=new Borrow(dto.getBorrowId(),dto.getBorrowDate(),dto.getDueDate(),dto.getUser(),dto.getBook());
+       session.update(borrow);
+
+       transaction.commit();
+       session.close();
+       return  true;
     }
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+       Session session=FactoryConfiguration.getInstance().getSession();
+       Transaction transaction= session.beginTransaction();
+
+       Borrow borrow= session.get(Borrow.class,id);
+       session.remove(borrow);
+
+       transaction.commit();
+       session.close();
+       return  true;
     }
 
     @Override
     public Borrow search(String id) throws Exception {
-        return null;
+        Session session=FactoryConfiguration.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
+
+        Borrow borrow = session.get(Borrow.class, id);
+        transaction.commit();
+        session.close();
+        return borrow;
     }
 
     @Override

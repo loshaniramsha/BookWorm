@@ -26,12 +26,27 @@ public class BranchDAOimpl implements BranchDAO {
 
     @Override
     public boolean update(Branch dto) throws Exception {
-        return false;
+       Session session=FactoryConfiguration.getInstance().getSession();
+       Transaction transaction= session.beginTransaction();
+
+       Branch branch=new Branch(dto.getBranchId(),dto.getLocation(),null);
+       session.update(branch);
+
+       transaction.commit();
+       session.close();
+       return true;
     }
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        Session session=FactoryConfiguration.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
+
+        session.remove(session.get(Branch.class,id));
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

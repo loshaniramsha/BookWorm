@@ -1,6 +1,120 @@
 #btnLogin{
    border: black 1px solid;
+   -fx-background-color: #0c0c93;
 }
 #lblLogin{
    border: black 1px solid;
+}
+
+
+#textName{
+ /*  -fx-effect: dropshadow(three-pass-box, rgba(128, 128, 128, 1), 10, 0, 3, 3);*/
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+
+}
+#textName:hover{
+   /*-fx-background-color: rgba(100, 250, 225, 0.1);*/
+   -fx-prompt-text-fill: #070734;
+   -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
+
+}
+#textPassword{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
+#textPassword:hover {
+   /*-fx-background-color: rgba(100, 250, 225, 0.1);*/
+   -fx-prompt-text-fill: #070734;
+   -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
+}
+#btnLogin{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 1), 10, 0, 3, 3);
+
+}
+#lblLogin{
+
+   -fx-effect: dropshadow(three-pass-box, rgba(128, 128, 128, 1), 10, 0, 3, 3);
+  /* -fx-effect: dropshadow rgba(128, 128, 128, 1)*/
+
+}
+#cmb{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 139, 1), 10, 0, 3, 3);
+}
+#lbl1{
+   /*-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 139, 1), 10, 0, 3, 3);*/
+   -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 1), 10, 0, 3, 3);
+}
+
+#btnUser,#btnBook,#btnbranch,#btnborrow{
+   -fx-effect: dropshadow(three-pass-box, rgba(225, 225, 225, 1), 10, 0, 3, 3);
+}
+#btnLogin:hover{
+   -fx-background-color: #03233f;
+}
+
+#btnUser:hover{
+   -fx-background-color: rgb(112,128,144);
+   -fx-prompt-text-fill: #0c0c93;
+
+}
+#btnUser,#btnBook,#btnbranch,#btnborrow{
+   -fx-prompt-text-fill: #f2f4f6;
+   -fx-background-color: #03233f;
+}
+
+#btnBook:hover{
+   -fx-background-color: rgb(112,128,144);
+}
+#btnbranch:hover{
+   -fx-background-color: rgb(112,128,144);
+}
+#btnborrow:hover{
+   -fx-background-color: rgb(112,128,144);
+}
+#btnsearch{
+   -fx-effect: dropshadow(three-pass-box, rgb(160, 94, 178), 10, 0, 8, 3);
+}
+#btnsave{
+   -fx-effect: dropshadow(three-pass-box, rgb(10, 38, 201), 10, 0, 8, 3);
+}
+#btndelete{
+   -fx-effect: dropshadow(three-pass-box, rgb(178, 21, 21), 10, 0, 8, 3);
+}
+#btnupdate{
+   -fx-effect: dropshadow(three-pass-box, rgb(68, 166, 5), 10, 0, 8, 3);
+}
+#btnClear{
+   -fx-effect: dropshadow(three-pass-box, rgb(125, 129, 4), 10, 0, 8, 3);
+}
+#btnSave{
+   -fx-effect: dropshadow(three-pass-box, rgb(10, 38, 201), 10, 0, 8, 3);
+}
+#anch{
+   -fx-background-color: #dfe4ea;
+   -fx-effect: dropshadow(three-pass-box, rgb(4, 18, 77), 10, 0, 8, 3);
+
+}
+#lbl{
+   -fx-effect: dropshadow(three-pass-box, rgb(4, 18, 77), 10, 0, 8, 3);
+}
+#btnCreate{
+   -fx-background-color: #051b83;
+   -fx-effect: dropshadow(three-pass-box, rgb(9, 9, 12), 10, 0, 8, 3);
+}
+#btnBack{
+   -fx-effect: dropshadow(three-pass-box, rgb(22, 58, 4), 10, 0, 8, 3);
+   -fx-background-color: #8ba279;
+}
+#textEmail{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
+#textEmail:hover{
+   -fx-prompt-text-fill: #070734;
+   -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
+ }
+#textId{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
+#textId:hover{
+   -fx-prompt-text-fill: #070734;
+   -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
 }

@@ -64,7 +64,23 @@ public class BookFormController {
         }
     }
 
-    public void searchOnAction(ActionEvent actionEvent) {
+    public void searchOnAction(ActionEvent actionEvent) throws Exception {
+        String id=textId.getText();
+        try {
+            Bookdto bookdto=bookBO.searchBook(id);
+            if (bookdto!=null){
+                textTittle.setText(bookdto.getTitle());
+                textAuthor.setText(bookdto.getAuthor());
+                textGenre.setText(bookdto.getGenre());
+                textStates.setText(bookdto.getStatus());
+                cmbBranch.setValue(bookdto.getBranchId());
+            }else {
+                new Alert(Alert.AlertType.WARNING,"Empty").show();
+            }
+        }
+        catch (Exception e){
+            throw new RuntimeException(e);
+        }
     }
 
     public void saveOnAction(ActionEvent actionEvent) throws Exception {
@@ -79,15 +95,46 @@ public class BookFormController {
        boolean isSaved=bookBO.saveBook(bookdto);
        if (isSaved){
            new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
+           clear();
        }
     }
 
-    public void deleteOnAction(ActionEvent actionEvent) {
+    public void deleteOnAction(ActionEvent actionEvent) throws Exception {
+        String id = textId.getText();
+        boolean isDeleted=bookBO.deleteBook(id);
+        if (isDeleted){
+            new Alert(Alert.AlertType.CONFIRMATION,"Deleted").show();
+            clear();
+        }
     }
 
-    public void updateOnAction(ActionEvent actionEvent) {
+    public void updateOnAction(ActionEvent actionEvent) throws Exception {
+        String id = textId.getText();
+        String tittle=textTittle.getText();
+        String author=textAuthor.getText();
+        String genre=textGenre.getText();
+        String states=textStates.getText();
+        String branch=cmbBranch.getValue().toString();
+        Bookdto bookdto=new Bookdto(id,tittle,author,genre,states,branch);
+        boolean isUpdated=bookBO.updateBook(bookdto);
+        if (isUpdated){
+            new Alert(Alert.AlertType.CONFIRMATION,"Updated").show();
+            clear();
+        }
     }
 
     public void cmbBranchOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        clear();
+    }
+    private void clear(){
+        textId.clear();
+        textTittle.clear();
+        textAuthor.clear();
+        textGenre.clear();
+        textStates.clear();
+        cmbBranch.getSelectionModel().clearSelection();
     }
 }

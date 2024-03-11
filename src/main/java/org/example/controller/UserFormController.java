@@ -3,10 +3,7 @@ package org.example.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import org.example.bo.BoFactory;
 import org.example.bo.custom.UserBO;
@@ -25,6 +22,12 @@ public class UserFormController {
     public Button btnSave;
     public Button btndelete;
     public Button btnupdate;
+    public Button btnClear;
+    public TableView tblUser;
+    public TableColumn colUserid;
+    public TableColumn colName;
+    public TableColumn colEmail;
+    public TableColumn colPassword;
 
     UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
 
@@ -70,6 +73,7 @@ public class UserFormController {
         boolean isSaved=userBO.saveUser(userdto);
         if (isSaved){
             new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
+            clear();
         }
     }
 
@@ -77,6 +81,7 @@ public class UserFormController {
         String id=textId.getText();
         if (userBO.deleteUser(id)){
             new Alert(Alert.AlertType.CONFIRMATION,"Deleted").show();
+            clear();
         }
     }
 
@@ -90,9 +95,20 @@ public class UserFormController {
          boolean isUpdated=userBO.updateUser(userdto);
          if (isUpdated){
              new Alert(Alert.AlertType.CONFIRMATION,"Updated").show();
+             clear();
          }
      } catch (Exception e) {
          throw new RuntimeException(e);
      }
+    }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        clear();
+    }
+    private void clear(){
+        textId.clear();
+        textName.clear();
+        textEmail.clear();
+        textPassword.clear();
     }
 }

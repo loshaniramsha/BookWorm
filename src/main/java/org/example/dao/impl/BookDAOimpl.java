@@ -24,12 +24,27 @@ public class BookDAOimpl implements BookDAO {
 
     @Override
     public boolean update(Book dto) throws Exception {
-        return false;
+       Session session=FactoryConfiguration.getInstance().getSession();
+       Transaction transaction= session.beginTransaction();
+
+       Book book=new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(),dto.getBranch(),null);
+       session.update(book);
+
+       transaction.commit();
+       session.close();
+       return true;
     }
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        Session session=FactoryConfiguration.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
+
+        session.remove(session.get(Book.class,id));
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

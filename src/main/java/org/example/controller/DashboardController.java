@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -93,5 +94,25 @@ public class DashboardController {
             stage.show();
 
         }
+    }
+
+    public void lblHome(MouseEvent mouseEvent) {
+    }
+
+    public void lblDashboard(MouseEvent mouseEvent) {
+    }
+
+    public void lblNotification(MouseEvent mouseEvent) {
+    }
+
+    public void lblSetting(MouseEvent mouseEvent) {
+    }
+
+    public void lblLogOut(MouseEvent mouseEvent) throws Exception {
+        System.exit(0);
+    }
+
+    public void lblLogout(MouseEvent mouseEvent) throws Exception {
+        System.exit(0);
     }
 }
