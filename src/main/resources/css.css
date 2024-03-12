@@ -118,3 +118,10 @@
    -fx-prompt-text-fill: #070734;
    -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
 }
+#passWord{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
+#passWord:hover{
+   -fx-prompt-text-fill: #070734;
+   -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
+}

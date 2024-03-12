@@ -80,8 +80,13 @@ public class BorrowFormController {
         String borrowDate= date.getValue().toString();
         String dueDate= duedate.getValue().toString();
 
-        BorrowDto borrowDto=new BorrowDto(id,userId,bookId,borrowDate,dueDate);
+        BorrowDto borrowDto=new BorrowDto(id,borrowDate,dueDate,userId,bookId);
         boolean isSaved=borrowBO.saveBorrow(borrowDto);
+
+        Bookdto bookdto = bookBO.searchBook(bookId);
+        bookdto.setStatus("borrowed");
+
+        bookBO.updateBook(bookdto);
 
         if (isSaved){
             new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();

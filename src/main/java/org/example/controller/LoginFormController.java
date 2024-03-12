@@ -1,12 +1,13 @@
 package org.example.controller;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -22,7 +23,17 @@ public class LoginFormController {
     public Button btnsing;
     public Button btnLogin;
     public ComboBox cmb;
-UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
+    public TextField txtPassword;
+    public PasswordField passWord;
+    public ImageView imgEye;
+    private FontAwesomeIconView fxEyeIcon;
+    private boolean isHidden = true;
+
+    UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
+
+    public void initialize() {
+        txtPassword.setVisible(false);
+    }
     public void lblforgotPassword(MouseEvent mouseEvent) {
     }
 
@@ -43,8 +54,9 @@ UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
     public void cbmOnAction(ActionEvent actionEvent) {
     }
 
-    public void lbleye(MouseEvent mouseEvent) {
-    }
+
+
+
 
     public void lblSingUp(MouseEvent mouseEvent) throws Exception {
         AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/UserRegister_Form.fxml"));
@@ -53,5 +65,34 @@ UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
         stage.setScene(scene);
         Stage.getWindows();
         stage.centerOnScreen();
+    }
+
+    public void userNameOnAction(ActionEvent actionEvent) {
+    }
+
+    public void passWordOnAction(ActionEvent actionEvent) {
+    }
+
+
+
+
+    public void passWordRelease(KeyEvent keyEvent) {
+        String text = passWord.getText();
+        txtPassword.setText(text);
+    }
+
+    public void lblEyeOnAction(MouseEvent mouseEvent) {
+        if (passWord.isVisible()) {
+            passWord.setVisible(false);
+            txtPassword.setVisible(true);
+        } else {
+            passWord.setVisible(true);
+            txtPassword.setVisible(false);
+        }
+    }
+
+    public void textPassword(KeyEvent keyEvent) {
+        String text = txtPassword.getText();
+        passWord.setText(text);
     }
 }

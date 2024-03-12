@@ -16,8 +16,8 @@ public class BorrowDAOimpl implements BorrowDAO {
     Session session=FactoryConfiguration.getInstance().getSession();
     Transaction transaction= session.beginTransaction();
 
-    Borrow borrow=new Borrow(dto.getBorrowId(),dto.getBorrowDate(),dto.getDueDate(),dto.getUser(),dto.getBook());
-    session.persist(borrow);
+   // Borrow borrow=new Borrow(dto.getBorrowId(),dto.getBorrowDate(),dto.getDueDate(),dto.getUser(),dto.getBook());
+    session.persist(dto);
 
     transaction.commit();
     session.close();
