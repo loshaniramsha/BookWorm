@@ -49,6 +49,7 @@ public class BookFormController {
                 for (Bookdto bookdto: bookdtoList) {
                 observableList.add(new Bookdto(bookdto.getBookId(),bookdto.getTitle(),bookdto.getAuthor(),bookdto.getGenre(),bookdto.getStatus(),bookdto.getBranchId()));
                 }
+                
             }
 
         } catch (Exception e) {

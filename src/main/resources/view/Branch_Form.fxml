@@ -5,48 +5,40 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="child" prefHeight="769.0" prefWidth="1094.0" style="-fx-background-color: #cfd8dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BranchFormController">
    <children>
-      <ImageView fitHeight="778.0" fitWidth="1099.0" layoutY="-4.0" pickOnBounds="true">
-         <image>
-            <Image url="@../image/dashboard.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutY="-1.0" opacity="0.81" prefHeight="778.0" prefWidth="1099.0" style="-fx-background-color: #1e272e;" />
-      <Label layoutY="-1.0" opacity="0.31" prefHeight="778.0" prefWidth="1099.0" style="-fx-background-color: #f5f6fa;" />
-      <Text layoutX="725.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Branch Manage" wrappingWidth="337.0000175088644">
+      <Label prefHeight="778.0" prefWidth="1099.0" style="-fx-background-color: #455a64;" />
+      <Text fill="#f5eeee" layoutX="134.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Branch Manage" wrappingWidth="337.0000175088644">
          <font>
-            <Font name="Bell MT" size="48.0" />
+            <Font name="Bell MT Bold" size="49.0" />
          </font>
       </Text>
-      <Text fill="#1b1919" layoutX="90.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id">
+      <Text fill="#f5eaea" layoutX="155.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textid" layoutX="82.0" layoutY="153.0" prefHeight="31.0" prefWidth="305.0" promptText="Enter Branch Id" style="-fx-background-radius: 0;" />
-      <Text fill="#171616" layoutX="86.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Branch">
+      <TextField fx:id="textid" layoutX="155.0" layoutY="171.0" prefHeight="31.0" prefWidth="305.0" promptText="Enter Branch Id" style="-fx-background-radius: 0;" />
+      <Text fill="#eee7e7" layoutX="608.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Branch">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textbranch" layoutX="82.0" layoutY="242.0" prefHeight="31.0" prefWidth="305.0" promptText="Branch Name" style="-fx-background-radius: 0;" />
-      <Button fx:id="btnsearch" layoutX="564.0" layoutY="185.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="31.0" prefWidth="270.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Search" />
-      <Button fx:id="btnsave" layoutX="497.0" layoutY="335.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Save" />
-      <Button fx:id="btndelete" layoutX="641.0" layoutY="335.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Delete" />
-      <Button fx:id="btnupdate" layoutX="790.0" layoutY="335.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Update" />
-      <TableView layoutX="218.0" layoutY="410.0" prefHeight="335.0" prefWidth="631.0">
+      <TextField fx:id="textbranch" layoutX="607.0" layoutY="171.0" prefHeight="31.0" prefWidth="305.0" promptText="Branch Name" style="-fx-background-radius: 0;" />
+      <Button fx:id="btnsearch" layoutX="558.0" layoutY="23.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="31.0" prefWidth="305.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Search" />
+      <Button fx:id="btnsave" layoutX="278.0" layoutY="262.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Save" />
+      <Button fx:id="btndelete" layoutX="450.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Delete" />
+      <Button fx:id="btnupdate" layoutX="614.0" layoutY="263.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Update" />
+      <TableView fx:id="tblBranch" layoutX="150.0" layoutY="340.0" prefHeight="411.0" prefWidth="751.0">
         <columns>
-          <TableColumn fx:id="colid" prefWidth="224.0" text="Branch Id" />
-          <TableColumn fx:id="colbranch" prefWidth="406.0" text="Branch" />
+          <TableColumn fx:id="colid" prefWidth="305.0" text="Branch Id" />
+          <TableColumn fx:id="colbranch" prefWidth="450.0" text="Branch" />
         </columns>
       </TableView>
-      <Button fx:id="btnClear" layoutX="941.0" layoutY="335.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Clear" />
+      <Button fx:id="btnClear" layoutX="775.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Clear" />
    </children>
 </AnchorPane>

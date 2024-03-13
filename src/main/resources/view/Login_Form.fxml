@@ -65,9 +65,9 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <Hyperlink layoutX="55.0" layoutY="509.0" onMouseClicked="#lblSingUp" prefHeight="29.0" prefWidth="177.0" text="New User? Sing up" textFill="#b5b4b9">
+      <Hyperlink layoutX="55.0" layoutY="509.0" onMouseClicked="#lblSingUp" prefHeight="40.0" prefWidth="216.0" text="New User? Sing up" textFill="#ebe7e7">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="20.0" />
          </font></Hyperlink>
       <Text layoutX="660.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-----------------------  or  --------------------------- ">
          <font>

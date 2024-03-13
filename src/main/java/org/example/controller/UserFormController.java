@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import org.example.bo.BoFactory;
 import org.example.bo.custom.UserBO;
@@ -32,7 +33,16 @@ public class UserFormController {
     UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
 
     public void initialize() {
+
         loardAllUser();
+        setCellValueFactory();
+    }
+
+    private void setCellValueFactory() {
+        colUserid.setCellValueFactory(new PropertyValueFactory<>("u_id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("u_name"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<>("Password"));
     }
 
     private void loardAllUser() {
@@ -42,6 +52,7 @@ public class UserFormController {
             for (Userdto userdto: userdtoList) {
                 observableList.add(new Userdto(userdto.getU_id(),userdto.getU_name(),userdto.getEmail(),userdto.getPassword()));
             }
+            tblUser.setItems(observableList);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

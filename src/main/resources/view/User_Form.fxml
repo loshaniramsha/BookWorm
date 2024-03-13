@@ -5,61 +5,53 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="root" prefHeight="764.0" prefWidth="1094.0" style="-fx-background-color: #cfd8dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserFormController">
    <children>
-      <ImageView fitHeight="765.0" fitWidth="1094.0" layoutX="-1.0" pickOnBounds="true">
-         <image>
-            <Image url="@../image/dashboard.jpg" />
-         </image>
-      </ImageView>
-      <Label opacity="0.8" prefHeight="772.0" prefWidth="1094.0" style="-fx-background-color: #2f3640;" />
-      <Label layoutY="-3.0" opacity="0.32" prefHeight="772.0" prefWidth="1094.0" style="-fx-background-color: #f5f6fa;" />
-      <TextField fx:id="textPassword" layoutX="530.0" layoutY="284.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter Password" style="-fx-background-radius: 0;" />
-      <Text layoutX="743.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Manage" wrappingWidth="343.14599609375">
+      <Label layoutY="-2.0" prefHeight="770.0" prefWidth="1094.0" style="-fx-background-color: #455a64;" />
+      <TextField fx:id="textPassword" layoutX="678.0" layoutY="217.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter Password" style="-fx-background-radius: 0;" />
+      <Text fill="#e8e6f2" layoutX="89.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Manage" wrappingWidth="343.14599609375">
          <font>
             <Font name="Bell MT Bold" size="51.0" />
          </font>
       </Text>
-      <Text layoutX="124.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="54.82470703125">
+      <Text fill="#f8eeee" layoutX="103.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="54.82470703125">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="textId" layoutX="121.0" layoutY="179.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter id" style="-fx-background-radius: 0;" />
-      <Text layoutX="125.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <TextField fx:id="textId" layoutX="101.0" layoutY="149.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter id" style="-fx-background-radius: 0;" />
+      <Text fill="#fff7f7" layoutX="101.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textName" layoutX="121.0" layoutY="279.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter your Name" style="-fx-background-radius: 0;" />
-      <Text layoutX="533.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.87399905920029">
+      <TextField fx:id="textName" layoutX="101.0" layoutY="217.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter your Name" style="-fx-background-radius: 0;" />
+      <Text fill="#e8dfdf" layoutX="678.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.87399905920029">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textEmail" layoutX="523.0" layoutY="195.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter email" style="-fx-background-radius: 0;" />
-      <Text layoutX="534.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <TextField fx:id="textEmail" layoutX="678.0" layoutY="151.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter email" style="-fx-background-radius: 0;" />
+      <Text fill="#f5ecec" layoutX="678.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font size="21.0" />
          </font>
       </Text>
-      <Button fx:id="btnsearch" layoutX="839.0" layoutY="123.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="31.0" prefWidth="236.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="search" />
-      <Button fx:id="btnSave" layoutX="434.0" layoutY="360.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Save" />
-      <Button fx:id="btndelete" layoutX="581.0" layoutY="360.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Delete" />
-      <Button fx:id="btnupdate" layoutX="729.0" layoutY="360.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Update" />
-      <Button fx:id="btnClear" layoutX="882.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Clear" />
-      <TableView fx:id="tblUser" layoutX="121.0" layoutY="406.0" prefHeight="357.0" prefWidth="861.0">
+      <Button fx:id="btnsearch" layoutX="468.0" layoutY="22.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="31.0" prefWidth="343.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="search" />
+      <Button fx:id="btnSave" layoutX="412.0" layoutY="290.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Save" />
+      <Button fx:id="btndelete" layoutX="559.0" layoutY="290.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Delete" />
+      <Button fx:id="btnupdate" layoutX="707.0" layoutY="290.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Update" />
+      <Button fx:id="btnClear" layoutX="860.0" layoutY="290.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Clear" />
+      <TableView fx:id="tblUser" layoutX="98.0" layoutY="350.0" prefHeight="394.0" prefWidth="900.0">
         <columns>
-          <TableColumn fx:id="colUserid" prefWidth="141.0" text="User Id" />
-          <TableColumn fx:id="colName" prefWidth="204.0" text="Name" />
-            <TableColumn fx:id="colEmail" prefWidth="307.0" text="Email" />
-            <TableColumn fx:id="colPassword" prefWidth="208.0" text="Password" />
+          <TableColumn fx:id="colUserid" prefWidth="108.0" text="User Id" />
+          <TableColumn fx:id="colName" prefWidth="232.0" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="315.0" text="Email" />
+            <TableColumn fx:id="colPassword" prefWidth="247.0" text="Password" />
         </columns>
       </TableView>
    </children>

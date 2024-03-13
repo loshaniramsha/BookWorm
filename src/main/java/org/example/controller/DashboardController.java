@@ -97,9 +97,11 @@ public class DashboardController {
     }
 
     public void lblHome(MouseEvent mouseEvent) {
+        setForm("/view/Login_Form.fxml");
     }
 
     public void lblDashboard(MouseEvent mouseEvent) {
+        setForm("/view/Dashboard02_Form.fxml");
     }
 
     public void lblNotification(MouseEvent mouseEvent) {

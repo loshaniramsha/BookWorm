@@ -7,69 +7,61 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="child" prefHeight="769.0" prefWidth="1094.0" style="-fx-background-color: #cfd8dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BorrowFormController">
    <children>
-      <ImageView fitHeight="769.0" fitWidth="1105.0" pickOnBounds="true">
-         <image>
-            <Image url="@../image/dashboard.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="-3.0" opacity="0.82" prefHeight="769.0" prefWidth="1113.0" style="-fx-background-color: #2f3640;" />
-      <Label layoutX="1.0" layoutY="1.0" opacity="0.32" prefHeight="769.0" prefWidth="1105.0" style="-fx-background-color: #f5f6fa;" />
-      <Text fill="#1e1717" layoutX="736.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrowing Book" wrappingWidth="316.142578125">
+      <Label layoutX="-7.0" prefHeight="770.0" prefWidth="1113.0" style="-fx-background-color: #455a64;" />
+      <Text fill="#f2e9e9" layoutX="133.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrowing Book" wrappingWidth="382.142578125">
          <font>
-            <Font name="Bell MT" size="40.0" />
+            <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Text fill="#1e1b1b" layoutX="73.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrowing id" wrappingWidth="130.82470703125">
+      <Text fill="#eee8e8" layoutX="151.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrowing id" wrappingWidth="130.82470703125">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textid" layoutX="67.0" layoutY="117.0" prefHeight="31.0" prefWidth="266.0" promptText="Borrow id" style="-fx-background-radius: 0;" />
-      <Text layoutX="68.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id">
+      <TextField fx:id="textid" layoutX="150.0" layoutY="116.0" prefHeight="31.0" prefWidth="266.0" promptText="Borrow id" style="-fx-background-radius: 0;" />
+      <Text fill="#eee9e9" layoutX="149.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Id">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cmbbookId" layoutX="68.0" layoutY="272.0" onAction="#cmbBookOnAction" prefHeight="31.0" prefWidth="266.0" promptText="Book id" style="-fx-background-radius: 0;" />
-      <Text fill="#1e1c1c" layoutX="73.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Id">
+      <ComboBox fx:id="cmbbookId" layoutX="149.0" layoutY="265.0" onAction="#cmbBookOnAction" prefHeight="31.0" prefWidth="266.0" promptText="Book id" style="-fx-background-radius: 0;" />
+      <Text fill="#f2ecec" layoutX="150.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Id">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font size="21.0" />
          </font>
       </Text>
-      <Text fill="#0d0d0d" layoutX="481.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrow Date">
+      <Text fill="#fcf2f2" layoutX="664.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrow Date">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font size="21.0" />
          </font>
       </Text>
-      <Text fill="#0a0909" layoutX="482.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Due Date">
+      <Text fill="#ebdfdf" layoutX="664.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Due Date">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <DatePicker fx:id="date" layoutX="477.0" layoutY="191.0" prefHeight="31.0" prefWidth="266.0" promptText="Borrow date" style="-fx-background-radius: 0;" />
-      <DatePicker fx:id="duedate" layoutX="482.0" layoutY="276.0" prefHeight="31.0" prefWidth="266.0" promptText="Due date" style="-fx-background-radius: 0;" />
-      <Button fx:id="btnsearch" layoutX="657.0" layoutY="93.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="31.0" prefWidth="255.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Search" />
-      <Button fx:id="btnsave" layoutX="514.0" layoutY="334.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Save" />
-      <Button fx:id="btndelete" layoutX="663.0" layoutY="334.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Delete" />
-      <Button fx:id="btnupdate" layoutX="814.0" layoutY="334.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Update" />
-      <TableView fx:id="tblBorrow" layoutX="160.0" layoutY="389.0" prefHeight="342.0" prefWidth="768.0">
+      <DatePicker fx:id="date" layoutX="663.0" layoutY="153.0" prefHeight="31.0" prefWidth="266.0" promptText="Borrow date" style="-fx-background-radius: 0;" />
+      <DatePicker fx:id="duedate" layoutX="664.0" layoutY="232.0" prefHeight="31.0" prefWidth="266.0" promptText="Due date" style="-fx-background-radius: 0;" />
+      <Button fx:id="btnsearch" layoutX="569.0" layoutY="20.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="31.0" prefWidth="255.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Search" />
+      <Button fx:id="btnsave" layoutX="351.0" layoutY="325.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Save" />
+      <Button fx:id="btndelete" layoutX="500.0" layoutY="325.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Delete" />
+      <Button fx:id="btnupdate" layoutX="651.0" layoutY="325.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Update" />
+      <TableView fx:id="tblBorrow" layoutX="149.0" layoutY="385.0" prefHeight="372.0" prefWidth="787.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="115.0" text="Id" />
           <TableColumn fx:id="colUserid" prefWidth="141.0" text="User Id" />
             <TableColumn fx:id="colbookid" prefWidth="132.0" text="Book Id" />
-            <TableColumn fx:id="colborrowDate" prefWidth="143.0" text="Borrow Date" />
-            <TableColumn fx:id="coldueDate" prefWidth="237.0" text="Due Date" />
+            <TableColumn fx:id="colborrowDate" prefWidth="186.0" text="Borrow Date" />
+            <TableColumn fx:id="coldueDate" prefWidth="212.0" text="Due Date" />
         </columns>
       </TableView>
-      <TextField fx:id="textUserid" layoutX="68.0" layoutY="196.0" prefHeight="31.0" prefWidth="266.0" promptText="User Id" />
-      <Button fx:id="btnClear" layoutX="962.0" layoutY="334.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Clear" />
+      <TextField fx:id="textUserid" layoutX="148.0" layoutY="196.0" prefHeight="31.0" prefWidth="266.0" promptText="User Id" />
+      <Button fx:id="btnClear" layoutX="799.0" layoutY="323.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Clear" />
    </children>
 </AnchorPane>
