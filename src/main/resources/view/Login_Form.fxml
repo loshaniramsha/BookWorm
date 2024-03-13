@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" focusTraversable="true" prefHeight="625.0" prefWidth="1164.0" style="-fx-background-color: #2C3A47;" styleClass="-fx-effect: dropshadow" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.LoginFormController">
+<AnchorPane fx:id="root" focusTraversable="true" prefHeight="769.0" prefWidth="1095.0" style="-fx-background-color: #2C3A47;" styleClass="-fx-effect: dropshadow" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.LoginFormController">
    <children>
-      <Label layoutX="520.0" prefHeight="625.0" prefWidth="643.0" style="-fx-background-color: #dcdde1;" />
+      <Label layoutX="520.0" prefHeight="769.0" prefWidth="643.0" style="-fx-background-color: #dcdde1;" />
       <Text fill="#120936f0" layoutX="878.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in" wrappingWidth="267.56785494089127">
          <font>
             <Font name="Bell MT" size="70.0" />
@@ -24,17 +24,17 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Hyperlink layoutX="772.0" layoutY="471.0" onMouseClicked="#lblforgotPassword" text="Forgot Password" textFill="#1a1a1e">
+      <Hyperlink layoutX="772.0" layoutY="484.0" onMouseClicked="#lblforgotPassword" text="Forgot Password" textFill="#1a1a1e">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Hyperlink>
-      <ImageView fitHeight="625.0" fitWidth="512.0" layoutX="1.0" layoutY="1.0" opacity="0.3" pickOnBounds="true">
+      <ImageView fitHeight="769.0" fitWidth="518.0" layoutX="1.0" opacity="0.3" pickOnBounds="true">
          <image>
             <Image url="@../image/login.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="48.0" layoutY="23.0" opacity="0.25" prefHeight="580.0" prefWidth="432.0" style="-fx-background-color: #dcdde1;" />
+      <Label layoutX="48.0" layoutY="23.0" opacity="0.25" prefHeight="727.0" prefWidth="432.0" style="-fx-background-color: #dcdde1;" />
       <Text fill="#cdcaca" layoutX="62.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BookWorm" wrappingWidth="267.56787109375">
          <font>
             <Font name="Algerian" size="47.0" />
@@ -69,7 +69,7 @@
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Hyperlink>
-      <Text layoutX="660.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-----------------------  or  --------------------------- ">
+      <Text layoutX="660.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-----------------------  or  --------------------------- ">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -1,7 +1,10 @@
 package org.example.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import org.example.bo.BoFactory;
 import org.example.bo.custom.BookBO;
@@ -40,9 +43,24 @@ public class BorrowFormController {
     public void initialize() throws Exception {
         loardcmb();
         loardAllBorrow();
+        setCellValueFactory();
+    }
+
+    private void setCellValueFactory() {
+
     }
 
     private void loardAllBorrow() {
+        ObservableList<BorrowDto>observableList= FXCollections.observableArrayList();
+        try {
+            List<BorrowDto> allBorrow =borrowBO.getAllBorrow();
+            for (BorrowDto borrowDto : allBorrow) {
+                observableList.add(borrowDto);
+            }
+            tblBorrow.setItems(observableList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void loardcmb() throws Exception {

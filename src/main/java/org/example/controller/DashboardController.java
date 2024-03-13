@@ -96,8 +96,13 @@ public class DashboardController {
         }
     }
 
-    public void lblHome(MouseEvent mouseEvent) {
-        setForm("/view/Login_Form.fxml");
+    public void lblHome(MouseEvent mouseEvent) throws IOException {
+        AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/Login_Form.fxml"));
+        Scene scene=new Scene(anchorPane);
+        Stage stage=(Stage)root.getScene().getWindow();
+        stage.setScene(scene);
+        Stage.getWindows();
+        stage.centerOnScreen();
     }
 
     public void lblDashboard(MouseEvent mouseEvent) {

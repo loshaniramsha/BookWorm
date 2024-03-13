@@ -13,7 +13,7 @@
    <children>
       <Label layoutY="-2.0" prefHeight="770.0" prefWidth="1094.0" style="-fx-background-color: #455a64;" />
       <TextField fx:id="textPassword" layoutX="678.0" layoutY="217.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter Password" style="-fx-background-radius: 0;" />
-      <Text fill="#e8e6f2" layoutX="89.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Manage" wrappingWidth="343.14599609375">
+      <Text fill="#e8e6f2" layoutX="90.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Manage" wrappingWidth="343.14599609375">
          <font>
             <Font name="Bell MT Bold" size="51.0" />
          </font>

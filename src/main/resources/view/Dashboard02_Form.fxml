@@ -14,8 +14,8 @@
             <Image url="@../image/dashboard.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="-1.0" layoutY="-1.0" opacity="0.8" prefHeight="769.0" prefWidth="1094.0" style="-fx-background-color: #1e272e;" />
-      <Text fill="#eee7e7" layoutX="588.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BookWorm Online Library" wrappingWidth="491.01318359375">
+      <Label layoutX="-1.0" layoutY="-1.0" opacity="0.85" prefHeight="769.0" prefWidth="1094.0" style="-fx-background-color: #455a64;" />
+      <Text fill="#eee7e7" layoutX="588.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BookWorm Online Library" wrappingWidth="491.01318359375">
          <font>
             <Font name="Algerian" size="35.0" />
          </font>

@@ -4,11 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import org.example.bo.BoFactory;
 import org.example.bo.custom.BookBO;
+import org.example.bo.custom.BorrowBO;
 import org.example.bo.custom.BranchBO;
 import org.example.dto.Bookdto;
+import org.example.dto.BorrowDto;
 import org.example.dto.Branchdto;
 
 import java.util.List;
@@ -34,27 +37,33 @@ public class BookFormController {
     public TextField textStates;
     BookBO bookBO= (BookBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BOOK);
      BranchBO branchBO= (BranchBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BRANCH);
+     BorrowBO borrowBO= (BorrowBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BORROW);
     public void initialize() throws Exception {
         loardCmb();
         loardAllBook();
+        setCellValueFactory();
+    }
+
+    private void setCellValueFactory() {
+        colid.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+        coltittle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colauther.setCellValueFactory(new PropertyValueFactory<>("author"));
+        colgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        colstates.setCellValueFactory(new PropertyValueFactory<>("status"));
+        colBranch.setCellValueFactory(new PropertyValueFactory<>("branchId"));
     }
 
     private void loardAllBook() {
-        ObservableList<Bookdto> observableList= FXCollections.observableArrayList();
-        try {
-            List<Bookdto> bookdtoList= bookBO.getAllBook();
-            if (bookdtoList == null) {
-                new Alert(Alert.AlertType.WARNING, "Empty").show();
-            } else {
-                for (Bookdto bookdto: bookdtoList) {
-                observableList.add(new Bookdto(bookdto.getBookId(),bookdto.getTitle(),bookdto.getAuthor(),bookdto.getGenre(),bookdto.getStatus(),bookdto.getBranchId()));
-                }
-                
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+   ObservableList<Bookdto>observableList= FXCollections.observableArrayList();
+   try {
+       List<Bookdto> allBook =bookBO.getAllBook();
+       for (Bookdto bookdto : allBook) {
+           observableList.add(bookdto);
+       }
+       tblbook.setItems(observableList);
+   } catch (Exception e) {
+       throw new RuntimeException(e);
+   }
     }
 
     private void loardCmb() throws Exception {
