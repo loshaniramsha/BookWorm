@@ -51,7 +51,7 @@ public class BorrowFormController {
     }
 
     private void loardAllBorrow() {
-        ObservableList<BorrowDto>observableList= FXCollections.observableArrayList();
+    /*    ObservableList<BorrowDto>observableList= FXCollections.observableArrayList();
         try {
             List<BorrowDto> allBorrow =borrowBO.getAllBorrow();
             for (BorrowDto borrowDto : allBorrow) {
@@ -60,7 +60,7 @@ public class BorrowFormController {
             tblBorrow.setItems(observableList);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
     private void loardcmb() throws Exception {
