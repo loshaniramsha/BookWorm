@@ -14,12 +14,12 @@ public class UserBOimpl implements UserBO {
     UserDAO userDAO= (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.USER);
     @Override
     public boolean saveUser(Userdto dto) throws Exception {
-        return userDAO.save(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),null));
+        return userDAO.save(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),dto.getStatus(),null));
     }
 
     @Override
     public boolean updateUser(Userdto dto) throws Exception {
-        return userDAO.update(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),null));
+        return userDAO.update(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(), dto.getStatus(), null));
     }
 
     @Override
@@ -30,7 +30,7 @@ public class UserBOimpl implements UserBO {
     @Override
     public Userdto searchUser(String id) throws Exception {
         User user=userDAO.search(id);
-        return new Userdto(user.getU_id(), user.getU_name(), user.getEmail(), user.getPassword());
+        return new Userdto(user.getU_id(), user.getU_name(), user.getEmail(), user.getPassword(), user.getStatus());
     }
 
     @Override
@@ -38,7 +38,7 @@ public class UserBOimpl implements UserBO {
         List<User> all=userDAO.getAll();
         List<Userdto> list=new ArrayList<>();
         for (User user:all){
-            list.add(new Userdto(user.getU_id(),user.getU_name(),user.getEmail(),user.getPassword()));
+            list.add(new Userdto(user.getU_id(),user.getU_name(),user.getEmail(),user.getPassword(),user.getStatus()));
         }
         return list;
     }

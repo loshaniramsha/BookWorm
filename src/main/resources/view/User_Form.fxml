@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -12,31 +13,31 @@
 <AnchorPane fx:id="root" prefHeight="764.0" prefWidth="1094.0" style="-fx-background-color: #cfd8dc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserFormController">
    <children>
       <Label layoutY="-2.0" prefHeight="770.0" prefWidth="1094.0" style="-fx-background-color: #455a64;" />
-      <TextField fx:id="textPassword" layoutX="678.0" layoutY="217.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter Password" style="-fx-background-radius: 0;" />
+      <TextField fx:id="textPassword" layoutX="607.0" layoutY="167.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter Password" style="-fx-background-radius: 0;" />
       <Text fill="#e8e6f2" layoutX="90.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Manage" wrappingWidth="343.14599609375">
          <font>
             <Font name="Bell MT Bold" size="51.0" />
          </font>
       </Text>
-      <Text fill="#f8eeee" layoutX="103.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="54.82470703125">
+      <Text fill="#f8eeee" layoutX="103.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="54.82470703125">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="textId" layoutX="101.0" layoutY="149.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter id" style="-fx-background-radius: 0;" />
-      <Text fill="#fff7f7" layoutX="101.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <TextField fx:id="textId" layoutX="101.0" layoutY="100.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter id" style="-fx-background-radius: 0;" />
+      <Text fill="#fff7f7" layoutX="101.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textName" layoutX="101.0" layoutY="217.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter your Name" style="-fx-background-radius: 0;" />
-      <Text fill="#e8dfdf" layoutX="678.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.87399905920029">
+      <TextField fx:id="textName" layoutX="101.0" layoutY="168.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter your Name" style="-fx-background-radius: 0;" />
+      <Text fill="#e8dfdf" layoutX="101.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.87399905920029">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textEmail" layoutX="678.0" layoutY="151.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter email" style="-fx-background-radius: 0;" />
-      <Text fill="#f5ecec" layoutX="678.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <TextField fx:id="textEmail" layoutX="101.0" layoutY="246.0" prefHeight="31.0" prefWidth="309.0" promptText="Enter email" style="-fx-background-radius: 0;" />
+      <Text fill="#f5ecec" layoutX="607.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font size="21.0" />
          </font>
@@ -49,10 +50,17 @@
       <TableView fx:id="tblUser" layoutX="98.0" layoutY="350.0" prefHeight="394.0" prefWidth="900.0">
         <columns>
           <TableColumn fx:id="colUserid" prefWidth="108.0" text="User Id" />
-          <TableColumn fx:id="colName" prefWidth="232.0" text="Name" />
-            <TableColumn fx:id="colEmail" prefWidth="315.0" text="Email" />
-            <TableColumn fx:id="colPassword" prefWidth="247.0" text="Password" />
+          <TableColumn fx:id="colName" prefWidth="148.0" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="227.0" text="Email" />
+            <TableColumn fx:id="colPassword" prefWidth="152.0" text="Password" />
+            <TableColumn fx:id="colStates" prefWidth="264.0" text="States" />
         </columns>
       </TableView>
+      <Text fill="#f2ecec" layoutX="610.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="States">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbStates" layoutX="609.0" layoutY="237.0" onAction="#cmbStatesOnAction" prefHeight="31.0" prefWidth="309.0" />
    </children>
 </AnchorPane>

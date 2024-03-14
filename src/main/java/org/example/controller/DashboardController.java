@@ -69,7 +69,8 @@ public class DashboardController {
 
 
     public void bookOnAction(ActionEvent actionEvent) throws Exception {
-        setForm("/view/Book_Form.fxml");
+       /* setForm("/view/Book_Form.fxml");*/
+        setForm("/view/Book2_Form.fxml");
     }
 
     public void borrowOnAction(ActionEvent actionEvent) throws Exception {

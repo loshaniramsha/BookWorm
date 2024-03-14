@@ -15,7 +15,7 @@ public class UserDAOimpl implements UserDAO {
         Session session=FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
 
-        User user=new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),null);
+        User user=new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),dto.getStatus(),null);
         session.persist(user);
 
         transaction.commit();
@@ -28,7 +28,7 @@ public class UserDAOimpl implements UserDAO {
         Session session=FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
 
-        User user=new User(dto.getU_id(), dto.getU_name(), dto.getEmail(), dto.getPassword(), null);
+        User user=new User(dto.getU_id(), dto.getU_name(), dto.getEmail(), dto.getPassword(),dto.getStatus(), null);
         session.update(user);
 
         transaction.commit();

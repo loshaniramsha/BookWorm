@@ -9,10 +9,12 @@ import javafx.scene.layout.AnchorPane;
 import org.example.bo.BoFactory;
 import org.example.bo.custom.BookBO;
 import org.example.bo.custom.BorrowBO;
+import org.example.bo.custom.UserBO;
 import org.example.dto.Bookdto;
 import org.example.dto.BorrowDto;
 import org.example.dto.Userdto;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +42,8 @@ public class BorrowFormController {
 
     BookBO bookBO= (BookBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BOOK);
     BorrowBO borrowBO= (BorrowBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BORROW);
+
+    UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
     public void initialize() throws Exception {
         loardcmb();
         loardAllBorrow();
@@ -47,20 +51,28 @@ public class BorrowFormController {
     }
 
     private void setCellValueFactory() {
+        colid.setCellValueFactory(new PropertyValueFactory<>("borrowId"));
+        colUserid.setCellValueFactory(new PropertyValueFactory<>("userId"));
+        colbookid.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+        colborrowDate.setCellValueFactory(new PropertyValueFactory<>("borrowDate"));
+        coldueDate.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
 
     }
 
     private void loardAllBorrow() {
-    /*    ObservableList<BorrowDto>observableList= FXCollections.observableArrayList();
         try {
-            List<BorrowDto> allBorrow =borrowBO.getAllBorrow();
-            for (BorrowDto borrowDto : allBorrow) {
-                observableList.add(borrowDto);
+            List<BorrowDto> allBorrow = borrowBO.getAllBorrow();
+            if (allBorrow != null) {
+                ObservableList<BorrowDto> observableList = FXCollections.observableArrayList(allBorrow);
+                tblBorrow.setItems(observableList);
+            } else {
+                // Handle the case where allBorrow is null
+                System.out.println("No borrow data available.");
             }
-            tblBorrow.setItems(observableList);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }*/
+        }
+
     }
 
     private void loardcmb() throws Exception {
@@ -76,19 +88,21 @@ public class BorrowFormController {
 
     public void searchOnAction(ActionEvent actionEvent) throws Exception {
         String id = textid.getText();
-         try {
-             BorrowDto borrowDto=borrowBO.searchBorrow(id);
-             if (borrowDto != null) {
-                 textUserid.setText(borrowDto.getUserId());
-              /*   cmbbookId.setValue(borrowDto.getBookId());
-                 date.setValue(borrowDto.getBorrowDate());
-                 duedate.setValue(borrowDto.getDueDate());*/
-             }else {
-                 new Alert(Alert.AlertType.WARNING,"Empty").show();
-             }
-         }catch (Exception e){
-             throw new RuntimeException(e);
-         }
+        try {
+            BorrowDto borrowDto = borrowBO.searchBorrow(id);
+            if (borrowDto != null) {
+                textUserid.setText(borrowDto.getUserId());
+                cmbbookId.setValue(borrowDto.getBookId());
+                date.setValue(LocalDate.parse(borrowDto.getBorrowDate()));
+                duedate.setValue(LocalDate.parse(borrowDto.getDueDate()));
+            } else {
+                new Alert(Alert.AlertType.WARNING, "No borrow found with ID: " + id).show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "An error occurred while searching: " + e.getMessage()).show();
+            e.printStackTrace(); // Print stack trace for debugging purposes
+        }
+
     }
 
     public void saveOnAction(ActionEvent actionEvent) throws Exception {
@@ -105,6 +119,10 @@ public class BorrowFormController {
         bookdto.setStatus("borrowed");
 
         bookBO.updateBook(bookdto);
+
+        Userdto userdto= userBO.searchUser(userId);
+        userdto.setStatus("Pending");
+        userBO.updateUser(userdto);
 
         if (isSaved){
             new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();

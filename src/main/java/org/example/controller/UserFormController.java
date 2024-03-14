@@ -29,6 +29,8 @@ public class UserFormController {
     public TableColumn colName;
     public TableColumn colEmail;
     public TableColumn colPassword;
+    public TableColumn colStates;
+    public ComboBox cmbStates;
 
     UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
 
@@ -36,6 +38,17 @@ public class UserFormController {
 
         loardAllUser();
         setCellValueFactory();
+        loardCmb();
+    }
+
+    private void loardCmb() {
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "have Book",
+                "Not have Book"
+        );
+          cmbStates.setItems(options);
+       /* comboBox.setItems(options);*/
+
     }
 
     private void setCellValueFactory() {
@@ -43,6 +56,7 @@ public class UserFormController {
         colName.setCellValueFactory(new PropertyValueFactory<>("u_name"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
         colPassword.setCellValueFactory(new PropertyValueFactory<>("Password"));
+        colStates.setCellValueFactory(new PropertyValueFactory<>("status"));
     }
 
     private void loardAllUser() {
@@ -50,7 +64,7 @@ public class UserFormController {
         try {
             List<Userdto> userdtoList= userBO.getAllUser();
             for (Userdto userdto: userdtoList) {
-                observableList.add(new Userdto(userdto.getU_id(),userdto.getU_name(),userdto.getEmail(),userdto.getPassword()));
+                observableList.add(new Userdto(userdto.getU_id(),userdto.getU_name(),userdto.getEmail(),userdto.getPassword(),userdto.getStatus()));
             }
             tblUser.setItems(observableList);
         } catch (Exception e) {
@@ -80,7 +94,8 @@ public class UserFormController {
         String name = textName.getText();
         String email = textEmail.getText();
         String password = textPassword.getText();
-        Userdto userdto=new Userdto(id,name,email,password);
+        String status = (String) cmbStates.getValue();
+        Userdto userdto=new Userdto(id,name,email,password,status);
         boolean isSaved=userBO.saveUser(userdto);
         if (isSaved){
             new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
@@ -101,7 +116,8 @@ public class UserFormController {
      String name=textName.getText();
      String email=textEmail.getText();
      String password=textPassword.getText();
-     Userdto userdto=new Userdto(id,name,email,password);
+     String status=(String) cmbStates.getValue();
+     Userdto userdto=new Userdto(id,name,email,password,status);
      try {
          boolean isUpdated=userBO.updateUser(userdto);
          if (isUpdated){
@@ -121,5 +137,8 @@ public class UserFormController {
         textName.clear();
         textEmail.clear();
         textPassword.clear();
+    }
+
+    public void cmbStatesOnAction(ActionEvent actionEvent) {
     }
 }

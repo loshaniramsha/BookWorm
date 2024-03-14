@@ -1,10 +1,13 @@
 package org.example.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -19,15 +22,28 @@ public class UserRegisterController {
     public TextField textId;
     public Button btnCreate;
     public AnchorPane anch;
+    public Button btnBack;
+    public ComboBox cmbStates;
 
     UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
+    public void initialize() {
+        loardCmb();
+    }
+
+    private void loardCmb() {
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "have Book",
+                "Not have Book"
+        );
+        cmbStates.setItems(options);
+    }
 
     public void createOnAction(ActionEvent actionEvent) {
         if (textEmail.getText().isEmpty() || textName.getText().isEmpty() || textPassword.getText().isEmpty() ){
             new Alert(Alert.AlertType.WARNING,"Empty").show();
         } else{
             try {
-                Userdto userdto = new Userdto(textId.getText(), textName.getText(), textEmail.getText(), textPassword.getText());
+                Userdto userdto = new Userdto(textId.getText(), textName.getText(), textEmail.getText(), textPassword.getText(), cmbStates.getValue().toString());
                 userBO.saveUser(userdto);
                 new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
             } catch (Exception e) {
@@ -43,5 +59,8 @@ public class UserRegisterController {
         stage.setScene(scene);
         Stage.getWindows();
         stage.centerOnScreen();
+    }
+
+    public void cmbStatesOnAction(ActionEvent actionEvent) {
     }
 }

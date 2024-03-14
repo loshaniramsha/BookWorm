@@ -136,3 +136,6 @@
 #textOTP:hover{
    -fx-prompt-text-fill: #0f0f10;
 }
+#textBookname:hover{
+   -fx-prompt-text-fill: #070734;
+}
