@@ -42,4 +42,14 @@ public class UserBOimpl implements UserBO {
         }
         return list;
     }
+
+    @Override
+    public Userdto searchByEmail(String mail) throws Exception {
+        User user=userDAO.searchByEmail(mail);
+        if (user==null){
+            return null;
+        } else {
+            return new Userdto(user.getU_id(),user.getU_name(),user.getEmail(),user.getPassword(),user.getStatus());
+        }
+    }
 }

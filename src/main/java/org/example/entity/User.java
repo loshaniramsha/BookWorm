@@ -1,5 +1,6 @@
 package org.example.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -18,6 +19,7 @@ public class User {
     @Id
     private String u_id;
     private String u_name;
+    @Column(unique = true)
     private String email;
     private String password;
     private String Status;

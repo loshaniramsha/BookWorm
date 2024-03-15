@@ -142,3 +142,21 @@
 #btnRetern{
    -fx-effect: dropshadow(three-pass-box, rgb(169, 8, 14), 10, 0, 3, 3);
 }
+#textOTP:hover{
+   -fx-prompt-text-fill: #0f0f10;
+}
+#textOTP{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+ }
+#textNewPW{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
+#textNewPW:hover{
+   -fx-prompt-text-fill: #0f0f10;
+}
+#textNewPW2{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
+#textNewPW2:hover{
+   -fx-prompt-text-fill: #0f0f10;
+}

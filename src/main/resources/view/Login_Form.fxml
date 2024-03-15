@@ -74,8 +74,8 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="txtPassword" layoutX="578.0" layoutY="274.0" onAction="#passWordOnAction" onKeyPressed="#textPassword" prefHeight="45.0" prefWidth="451.0" />
-      <PasswordField fx:id="passWord" layoutX="579.0" layoutY="275.0" onAction="#passWordOnAction" onKeyPressed="#passWordRelease" prefHeight="45.0" prefWidth="451.0" promptText="Password" />
+      <TextField fx:id="txtPassword" layoutX="578.0" layoutY="274.0" onAction="#passWordOnAction" onKeyTyped="#textPassword" prefHeight="45.0" prefWidth="451.0" />
+      <PasswordField fx:id="passWord" layoutX="579.0" layoutY="275.0" onAction="#passWordOnAction" onKeyTyped="#passWordRelease" prefHeight="45.0" prefWidth="451.0" promptText="Password" />
       <ImageView fx:id="imgEye" fitHeight="23.0" fitWidth="29.0" layoutX="997.0" layoutY="286.0" onMouseClicked="#lblEyeOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/eye.png" />

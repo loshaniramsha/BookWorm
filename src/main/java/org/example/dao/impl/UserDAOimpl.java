@@ -68,4 +68,16 @@ public class UserDAOimpl implements UserDAO {
         session.close();
         return userList;
     }
+
+    @Override
+    public User searchByEmail(String mail) throws Exception {
+        Session session=FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction();
+
+        User user= (User) session.createQuery("from User where email = :email").setParameter("email", mail).uniqueResult();
+
+        transaction.commit();
+        session.close();
+        return user;
+    }
 }
