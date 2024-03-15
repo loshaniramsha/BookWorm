@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="root" prefHeight="730.0" prefWidth="1299.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.DashboardUserController">
+   <children>
+      <Label prefHeight="769.0" prefWidth="204.0" style="-fx-background-color: #1e272e;" />
+      <AnchorPane fx:id="changepain" layoutX="204.0" prefHeight="769.0" prefWidth="1095.0" style="-fx-background-color: #455a64;" />
+      <ImageView fitHeight="28.0" fitWidth="29.0" layoutX="170.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/humberger.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="35.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="35.0" layoutX="18.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/dashboardicon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="13.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8-notification-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="28.0" layoutX="17.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/setting.png" />
+         </image>
+      </ImageView>
+      <Text fill="#f2e5e5" layoutX="67.0" layoutY="106.0" onMouseClicked="#lblHome" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="#ebe2e2" layoutX="67.0" layoutY="160.0" onMouseClicked="#lblDashboard" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#eeeaea" layoutX="67.0" layoutY="216.0" onMouseClicked="#lblNotification" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#ebe4e4" layoutX="67.0" layoutY="266.0" onMouseClicked="#lblSetting" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Line endX="76.0" layoutX="114.0" layoutY="298.0" startX="-100.0" stroke="#eee9e9" />
+      <Button fx:id="btnBook" layoutX="4.0" layoutY="350.0" mnemonicParsing="false" onAction="#bookOnAction" prefHeight="35.0" prefWidth="196.0" style="-fx-background-radius: 50;" stylesheets="@../css.css" text="Books" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnborrow" layoutX="4.0" layoutY="436.0" mnemonicParsing="false" onAction="#borrowOnAction" prefHeight="35.0" prefWidth="196.0" style="-fx-background-radius: 50;" stylesheets="@../css.css" text="Borrow" textFill="#f2ecec">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="21.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/book.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="22.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/borrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="48.0" layoutX="56.0" layoutY="590.0" onMouseClicked="#lblLogOut" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logOut.png" />
+         </image>
+      </ImageView>
+      <Text fill="#f8eded" layoutX="115.0" layoutY="619.0" onMouseClicked="#lblLogOut" strokeType="OUTSIDE" strokeWidth="0.0" text="Log Out" />
+   </children>
+</AnchorPane>
