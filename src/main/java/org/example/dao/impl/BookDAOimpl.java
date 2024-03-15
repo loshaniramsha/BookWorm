@@ -14,7 +14,7 @@ public class BookDAOimpl implements BookDAO {
         Session session= FactoryConfiguration.getInstance().getSession();
         Transaction transaction= session.beginTransaction();
 
-        Book book=new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(),dto.getBranch(),null);
+        Book book=new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(),dto.getBranch(),null,  null);
         session.persist(book);
 
         transaction.commit();
@@ -27,7 +27,7 @@ public class BookDAOimpl implements BookDAO {
        Session session=FactoryConfiguration.getInstance().getSession();
        Transaction transaction= session.beginTransaction();
 
-       Book book=new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(),dto.getBranch(),null);
+       Book book=new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(),dto.getBranch(),null,  null);
        session.update(book);
 
        transaction.commit();

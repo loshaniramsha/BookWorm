@@ -22,14 +22,14 @@ public class BookBOimpl implements BookBO {
     public boolean saveBook(Bookdto dto) throws Exception {
         Branch search = branchDAO.search(dto.getBranchId());
         System.out.println("branch id"+dto.getBranchId());
-        return bookDAO.save(new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(), search,null));
+        return bookDAO.save(new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(), search,null,null));
     }
 
     @Override
     public boolean updateBook(Bookdto dto) throws Exception {
       Branch search = branchDAO.search(dto.getBranchId());
         System.out.println(dto.getBranchId());
-        return bookDAO.update(new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(), search,null));
+        return bookDAO.update(new Book(dto.getBookId(), dto.getTitle(), dto.getAuthor(), dto.getGenre(), dto.getStatus(), search,null,null));
     }
 
     @Override

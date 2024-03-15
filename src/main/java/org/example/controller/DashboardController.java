@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -21,6 +22,9 @@ public class DashboardController {
     public Button btnbranch;
     public AnchorPane changepain;
     public static boolean isAdminUnlock = false;
+    public Button btnBook2;
+    public Text setting;
+    public Text notification;
 
     public void initialize(){
         setForm("/view/Dashboard02_Form.fxml");
@@ -69,8 +73,8 @@ public class DashboardController {
 
 
     public void bookOnAction(ActionEvent actionEvent) throws Exception {
-       /* setForm("/view/Book_Form.fxml");*/
-        setForm("/view/Book2_Form.fxml");
+        setForm("/view/Book_Form.fxml");
+
     }
 
     public void borrowOnAction(ActionEvent actionEvent) throws Exception {
@@ -122,5 +126,9 @@ public class DashboardController {
 
     public void lblLogout(MouseEvent mouseEvent) throws Exception {
         System.exit(0);
+    }
+
+    public void book2OnAction(ActionEvent actionEvent) throws Exception {
+        setForm("/view/Book2_Form.fxml");
     }
 }

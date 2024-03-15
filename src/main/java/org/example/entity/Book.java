@@ -5,7 +5,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.*;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.List;
 
@@ -29,5 +28,8 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private List<Borrow> borrows;
+
+    @OneToMany(mappedBy = "book")
+    private List<Book2> reterns;
 
 }

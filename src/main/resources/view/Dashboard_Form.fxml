@@ -103,5 +103,6 @@
             <Image url="@../image/humberger.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnBook2" layoutX="45.0" layoutY="540.0" mnemonicParsing="false" onAction="#book2OnAction" text="Book2" />
    </children>
 </AnchorPane>

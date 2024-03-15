@@ -4,10 +4,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import org.example.bo.BoFactory;
@@ -30,13 +27,29 @@ public class Book2Controller {
     public TableColumn colBranch;
     public Button btnRetern;
     public TableView tblbook;
+    public ComboBox cmbUser;
+    public ComboBox cmbBook;
 
     BookBO bookBO= (BookBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BOOK);
     UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
 
-    public void initialize() {
+    public void initialize() throws Exception {
          loardAllBook();
          setCellValueFactory();
+         loardCmb();
+    }
+
+    private void loardCmb() throws Exception {
+        cmbUser.getItems().clear();
+        List<Userdto> allUser = userBO.getAllUser();
+        for (Userdto userdto : allUser) {
+            cmbUser.getItems().add(userdto.getU_id());
+        }
+        cmbBook.getItems().clear();
+        List<Bookdto> allBook = bookBO.getAllBook();
+        for (Bookdto bookdto : allBook) {
+            cmbBook.getItems().add(bookdto.getBookId());
+        }
     }
 
     private void setCellValueFactory() {
@@ -94,7 +107,19 @@ public class Book2Controller {
 
     }
 
-    public void btnReternOnAction(ActionEvent actionEvent) {
+    public void btnReternOnAction(ActionEvent actionEvent) throws Exception {
+      String UserId=cmbUser.getValue().toString();
+      String BookId=cmbBook.getValue().toString();
+
+        Bookdto bookdto = bookBO.searchBook(BookId);
+        bookdto.setStatus("Available");
+
+        bookBO.updateBook(bookdto);
+
+        Userdto userdto= userBO.searchUser(UserId);
+        userdto.setStatus("Not have book");
+        userBO.updateUser(userdto);
+
 
     }
 }

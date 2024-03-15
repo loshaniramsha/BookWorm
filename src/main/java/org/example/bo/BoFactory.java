@@ -1,9 +1,6 @@
 package org.example.bo;
 
-import org.example.bo.impl.BookBOimpl;
-import org.example.bo.impl.BorrowBOimpl;
-import org.example.bo.impl.BranchBOimpl;
-import org.example.bo.impl.UserBOimpl;
+import org.example.bo.impl.*;
 import org.example.dao.DAOFactory;
 import org.example.dao.SuperDAO;
 import org.example.dao.impl.BookDAOimpl;
@@ -19,7 +16,7 @@ public class BoFactory {
         return (boFactory==null)?boFactory=new BoFactory():boFactory;
     }
     public enum BOType{
-        USER,BOOK,BRANCH,BORROW
+        USER,BOOK,BRANCH,BORROW,BOOK2
     }
     public SuperBO getBO(BOType boType){
         switch (boType){
@@ -31,6 +28,8 @@ public class BoFactory {
                 return new BranchBOimpl();
                 case BORROW:
                     return new BorrowBOimpl();
+                case BOOK2:
+                    return new Book2BOimpl();
             default:
                 return null;
         }

@@ -14,12 +14,12 @@ public class UserBOimpl implements UserBO {
     UserDAO userDAO= (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.USER);
     @Override
     public boolean saveUser(Userdto dto) throws Exception {
-        return userDAO.save(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),dto.getStatus(),null));
+        return userDAO.save(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(),dto.getStatus(),null,null));
     }
 
     @Override
     public boolean updateUser(Userdto dto) throws Exception {
-        return userDAO.update(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(), dto.getStatus(), null));
+        return userDAO.update(new User(dto.getU_id(),dto.getU_name(),dto.getEmail(),dto.getPassword(), dto.getStatus(), null, null));
     }
 
     @Override

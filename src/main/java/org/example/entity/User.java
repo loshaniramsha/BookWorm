@@ -25,4 +25,7 @@ public class User {
 
     @OneToMany(mappedBy = "user" )
     private List<Borrow> borrows;
+
+    @OneToMany(mappedBy = "user")
+    private List<Book2> reterns;
 }
