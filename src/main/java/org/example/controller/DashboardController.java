@@ -44,12 +44,13 @@ public class DashboardController {
     }
 
     public void userOnAction(ActionEvent actionEvent) throws Exception {
+        setForm("/view/User_Form.fxml");
 
-        if (isAdminUnlock) {
+      /*  if (isAdminUnlock) {
             goUserForm();
-        }else {
+        }else {*/
 
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/Admin_Form.fxml"));
+        /*    FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/Admin_Form.fxml"));
             Parent load = fxmlLoader.load();
             AdminUnlouckFormController adminUnlouckFormController = fxmlLoader.getController();
             adminUnlouckFormController.init(this);
@@ -59,9 +60,9 @@ public class DashboardController {
             stage.setResizable(false);
             stage.setTitle("Admin Login");
             stage.centerOnScreen();
-            stage.show();
+            stage.show();*/
 
-        }
+
     }
 
     public void goUserForm() {
@@ -82,11 +83,12 @@ public class DashboardController {
     }
 
     public void branchOnAction(ActionEvent actionEvent) throws IOException {
-        if (isAdminUnlock) {
+        setForm("/view/Branch_Form.fxml");
+      /*  if (isAdminUnlock) {
             goBranchForm();
-        }else {
+        }else {*/
 
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/Admin_Form.fxml"));
+        /*    FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/Admin_Form.fxml"));
             Parent load = fxmlLoader.load();
             AdminUnlouckFormController adminUnlouckFormController = fxmlLoader.getController();
             adminUnlouckFormController.init(this);
@@ -96,10 +98,10 @@ public class DashboardController {
             stage.setResizable(false);
             stage.setTitle("Admin Login");
             stage.centerOnScreen();
-            stage.show();
+            stage.show();*/
 
         }
-    }
+
 
     public void lblHome(MouseEvent mouseEvent) throws IOException {
         AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/Login_Form.fxml"));

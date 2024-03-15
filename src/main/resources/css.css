@@ -8,11 +8,12 @@
 
 
 #textName{
- /*  -fx-effect: dropshadow(three-pass-box, rgba(128, 128, 128, 1), 10, 0, 3, 3);*/
-   -fx-effect: dropshadow(three-pass-box, rgb(3, 35, 63), 10, 0, 8, 3);
 
-
+  /* -fx-effect: dropshadow(three-pass-box, rgb(3, 35, 63), 10, 0, 8, 3);*/
+ /*  -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
+*/
 }
+
 #textName:hover{
    /*-fx-background-color: rgba(100, 250, 225, 0.1);*/
    -fx-prompt-text-fill: #070734;
@@ -20,7 +21,8 @@
 
 }
 #textPassword{
-   -fx-effect: dropshadow(three-pass-box, rgb(3, 35, 63), 10, 0, 8, 3);
+   /*-fx-effect: dropshadow(three-pass-box, rgb(3, 35, 63), 10, 0, 8, 3);*/
+  /* -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);*/
 }
 #textPassword:hover {
    /*-fx-background-color: rgba(100, 250, 225, 0.1);*/
@@ -104,25 +106,25 @@
 }
 #btnBack{
    -fx-effect: dropshadow(three-pass-box, rgb(22, 58, 4), 10, 0, 8, 3);
-   -fx-background-color: #8ba279;
+   -fx-background-color: #44a605;
 }
 #textEmail{
-   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+ /*  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);*/
 }
 #textEmail:hover{
    -fx-prompt-text-fill: #070734;
    -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
  }
-#textId{
+/*#textId{
    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
-}
+}*/
 #textId:hover{
    -fx-prompt-text-fill: #070734;
    -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
 }
-#passWord{
-   -fx-effect: dropshadow(three-pass-box, rgb(3, 35, 63), 10, 0, 8, 3);
-}
+/*#passWord{
+   -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
+}*/
 #passWord:hover{
    -fx-prompt-text-fill: #070734;
    -fx-effect: dropshadow(three-pass-box, rgb(5, 27, 131), 10, 0, 4, 4);
@@ -160,3 +162,4 @@
 #textNewPW2:hover{
    -fx-prompt-text-fill: #0f0f10;
 }
+
