@@ -42,18 +42,21 @@ public class LoginFormController {
 
     public void loginOnAction(ActionEvent actionEvent)throws Exception {
 
-     /*   AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/Dashboard_Form.fxml"));
-        Scene scene=new Scene(anchorPane);
-        Stage stage=(Stage)root.getScene().getWindow();
-        stage.setScene(scene);
-        Stage.getWindows();
-        stage.centerOnScreen();*/
-        AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/DashboardUser.fxml"));
+       /*Admin*/
+        AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/Dashboard_Form.fxml"));
         Scene scene=new Scene(anchorPane);
         Stage stage=(Stage)root.getScene().getWindow();
         stage.setScene(scene);
         Stage.getWindows();
         stage.centerOnScreen();
+
+       /* User*/
+      /*  AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/DashboardUser.fxml"));
+        Scene scene=new Scene(anchorPane);
+        Stage stage=(Stage)root.getScene().getWindow();
+        stage.setScene(scene);
+        Stage.getWindows();
+        stage.centerOnScreen();*/
 
     }
 
