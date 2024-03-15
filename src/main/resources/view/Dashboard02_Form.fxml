@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -35,7 +38,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="38.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Popular Book" wrappingWidth="176.68458178639412">
+      <Text layoutX="38.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Availble Book" wrappingWidth="176.68458178639412">
          <font>
             <Font size="29.0" />
          </font>
@@ -65,5 +68,13 @@
             <Font size="50.0" />
          </font>
       </Text>
+      <BarChart layoutX="617.0" layoutY="335.0" prefHeight="403.0" prefWidth="448.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
    </children>
 </AnchorPane>
