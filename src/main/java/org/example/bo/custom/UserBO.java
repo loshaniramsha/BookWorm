@@ -15,4 +15,5 @@ public interface UserBO extends SuperBO {
 
     List<Userdto> getAllUser() throws Exception;
     Userdto searchByEmail(String mail) throws Exception;
+    String generateNextId() throws Exception;
 }

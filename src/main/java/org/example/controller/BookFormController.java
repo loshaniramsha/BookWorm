@@ -74,11 +74,13 @@ public class BookFormController {
         }
     }
 
-    public void searchOnAction(ActionEvent actionEvent) throws Exception {
+ /*   public void searchOnAction(ActionEvent actionEvent) throws Exception {
         String id=textId.getText();
+       *//* String title=textTittle.getText();*//*
         try {
             Bookdto bookdto=bookBO.searchBook(id);
             if (bookdto!=null){
+               *//* textId.setText(bookdto.getBookId());*//*
                 textTittle.setText(bookdto.getTitle());
                 textAuthor.setText(bookdto.getAuthor());
                 textGenre.setText(bookdto.getGenre());
@@ -91,7 +93,39 @@ public class BookFormController {
         catch (Exception e){
             throw new RuntimeException(e);
         }
+    }*/
+    public void searchOnAction(ActionEvent actionEvent) {
+        String id = textId.getText();
+        try {
+            Bookdto bookdto = bookBO.searchBook(id);
+            if (bookdto != null) {
+                // Clear previous selections
+                tblbook.getSelectionModel().clearSelection();
+
+                // Find the index of the book in the table view
+                int index = -1;
+                ObservableList<Bookdto> items = tblbook.getItems();
+                for (int i = 0; i < items.size(); i++) {
+                    if (items.get(i).getBookId().equals(bookdto.getBookId())) {
+                        index = i;
+                        break;
+                    }
+                }
+
+                // Highlight the row if the book is found
+                if (index >= 0) {
+                    tblbook.getSelectionModel().select(index);
+                    tblbook.scrollTo(index);
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Book not found: " + id).show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "An error occurred while searching: " + e.getMessage()).show();
+            e.printStackTrace(); // Print stack trace for debugging purposes
+        }
     }
+
 
     public void saveOnAction(ActionEvent actionEvent) throws Exception {
        String id=textId.getText();

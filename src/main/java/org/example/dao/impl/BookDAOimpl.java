@@ -49,10 +49,12 @@ public class BookDAOimpl implements BookDAO {
 
     @Override
     public Book search(String id) throws Exception {
+   /* public Book search(String title) throws Exception {*/
         Session session=FactoryConfiguration.getInstance().getSession();
         Transaction transaction= session.beginTransaction();
 
         Book book = session.get(Book.class, id);
+       /* Book book = session.get(Book.class, title);*/
         transaction.commit();
         session.close();
         return book;

@@ -39,7 +39,9 @@ public class BookBOimpl implements BookBO {
 
     @Override
     public Bookdto searchBook(String id) throws Exception {
+    /*public Bookdto searchBook(String tittle) throws Exception {*/
         Book search = bookDAO.search(id);
+     /*   Book search = bookDAO.search(tittle);*/
         return new Bookdto(search.getBookId(), search.getTitle(), search.getAuthor(), search.getGenre(), search.getStatus(), search.getBranch().getBranchId());
  /*       Book search = bookDAO.search(id);
         if (search != null) {

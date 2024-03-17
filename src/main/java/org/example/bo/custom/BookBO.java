@@ -11,5 +11,6 @@ boolean saveBook(Bookdto dto) throws Exception;
 boolean updateBook(Bookdto dto) throws Exception;
 boolean deleteBook(String id) throws Exception;
 Bookdto searchBook(String id) throws Exception;
+/*Bookdto searchBook(String title) throws Exception;*/
     List<Bookdto> getAllBook() throws Exception;
 }

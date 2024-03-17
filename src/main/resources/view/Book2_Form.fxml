@@ -16,7 +16,7 @@
             <Font name="Bell MT Bold" size="44.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="textBookname" layoutX="164.0" layoutY="80.0" prefHeight="31.0" prefWidth="418.0" promptText="Searching Book Name" stylesheets="@../css.css" unFocusColor="#f5eeee" />
+      <JFXTextField fx:id="textBookname" focusColor="#e0e2e8" layoutX="164.0" layoutY="80.0" prefHeight="31.0" prefWidth="418.0" promptText="Searching Book Name" stylesheets="@../css.css" unFocusColor="#f5eeee" />
       <Button fx:id="btnsearch" layoutX="673.0" layoutY="89.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="244.0" style="-fx-background-radius: 20;" stylesheets="@../css.css" text="Search" />
       <TableView fx:id="tblbook" layoutX="160.0" layoutY="273.0" prefHeight="486.0" prefWidth="765.0">
         <columns>

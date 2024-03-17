@@ -80,4 +80,28 @@ public class UserDAOimpl implements UserDAO {
         session.close();
         return user;
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Object object = session.createQuery("SELECT u_id FROM User ORDER BY u_id DESC LIMIT 1").uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if(object != null) {
+            String CurrentId = object.toString();
+            String[] split = CurrentId.split("U0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            if(id<10) {
+                return "U00" + id;
+            } else {
+                return "U0" + id;
+            }
+        } else {
+            return "U001";
+        }
+    }
 }

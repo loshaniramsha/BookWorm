@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import org.example.bo.BoFactory;
 import org.example.bo.custom.UserBO;
 import org.example.dto.Userdto;
+import org.example.util.Regex;
 
 public class UserRegisterController {
     public TextField textPassword;
@@ -26,7 +27,8 @@ public class UserRegisterController {
     public ComboBox cmbStates;
 
     UserBO userBO= (UserBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.USER);
-    public void initialize() {
+    public void initialize() throws Exception {
+        textId.setText(userBO.generateNextId());
         loardCmb();
     }
 
@@ -42,13 +44,24 @@ public class UserRegisterController {
         if (textEmail.getText().isEmpty() || textName.getText().isEmpty() || textPassword.getText().isEmpty() ){
             new Alert(Alert.AlertType.WARNING,"Empty").show();
         } else{
-            try {
-                Userdto userdto = new Userdto(textId.getText(), textName.getText(), textEmail.getText(), textPassword.getText(), cmbStates.getValue().toString());
-                userBO.saveUser(userdto);
-                new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
-            } catch (Exception e) {
-                new Alert(Alert.AlertType.WARNING,"Failed").show();
+
+            if(Regex.getEmailPattern().matcher(textEmail.getText()).matches()){
+                if (Regex.getNamePattern().matcher(textName.getText()).matches()) {
+                    try {
+                        Userdto userdto = new Userdto(textId.getText(), textName.getText(), textEmail.getText(), textPassword.getText(), cmbStates.getValue().toString());
+                        userBO.saveUser(userdto);
+                        new Alert(Alert.AlertType.CONFIRMATION,"Saved").show();
+                    } catch (Exception e) {
+                        new Alert(Alert.AlertType.WARNING,"Failed").show();
+                    }
+                }else{
+                    new Alert(Alert.AlertType.WARNING,"Invalid Name").show();
+                }
             }
+            else{
+                new Alert(Alert.AlertType.WARNING,"Invalid Email").show();
+            }
+
         }
     }
 

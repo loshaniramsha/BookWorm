@@ -71,4 +71,52 @@ public class BorrowDAOimpl implements BorrowDAO {
         session.close();
         return borrowList;
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        // Corrected the query to use OFFSET instead of LIMIT for HQL
+        Object object = session.createQuery("SELECT borrowId FROM Borrow ORDER BY borrowId DESC")
+                .setFirstResult(0)
+                .setMaxResults(1)
+                .uniqueResult();
+
+        transaction.commit();
+        session.close();
+
+        if (object != null) {
+            String currentId = object.toString();
+            String[] split = currentId.split("-");
+
+            int id = Integer.parseInt(split[1]) + 1; // Increment the ID
+            return "BO-" + String.format("%03d", id); // Format the ID with leading zeros
+        } else {
+            return "BO-001"; // If no previous ID found, return the default ID
+        }
+    }
+
+ /*   public String generateNextId() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Object object = session.createQuery("SELECT borrowId FROM Borrow ORDER BY borrowId DESC LIMIT 1").uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if(object != null) {
+            String CurrentId = object.toString();
+            String[] split = CurrentId.split("BO0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            if(id<10) {
+                return "BO-00" + id;
+            } else {
+                return "BO-0" + id;
+            }
+        } else {
+            return "BO-001";
+        }
+    }*/
 }

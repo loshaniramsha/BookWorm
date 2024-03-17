@@ -4,4 +4,5 @@ import org.example.dao.CrudDAO;
 import org.example.entity.Borrow;
 
 public interface BorrowDAO extends CrudDAO<Borrow> {
+    String generateNextId() throws Exception;
 }

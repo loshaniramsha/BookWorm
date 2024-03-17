@@ -60,4 +60,9 @@ public class BorrowBOimpl implements BorrowBO {
        }
        return list;
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        return borrowDAO.generateNextId();
+    }
 }

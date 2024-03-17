@@ -13,4 +13,5 @@ public interface BorrowBO extends SuperBO {
     BorrowDto searchBorrow(String id) throws Exception;
 
     List<BorrowDto> getAllBorrow() throws Exception;
+    String generateNextId() throws Exception;
 }

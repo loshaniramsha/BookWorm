@@ -139,7 +139,7 @@
    -fx-prompt-text-fill: #0f0f10;
 }
 #textBookname:hover{
-   -fx-prompt-text-fill: #070734;
+   -fx-prompt-text-fill: #e8e8ef;
 }
 #btnRetern{
    -fx-effect: dropshadow(three-pass-box, rgb(169, 8, 14), 10, 0, 3, 3);

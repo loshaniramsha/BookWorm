@@ -11,6 +11,7 @@ import org.example.bo.custom.UserBO;
 import org.example.dto.Userdto;
 
 import java.util.List;
+import java.util.UUID;
 
 public class UserFormController {
     public AnchorPane root;
@@ -102,6 +103,8 @@ public class UserFormController {
             clear();
         }
     }
+
+
 
     public void deleteOnAction(ActionEvent actionEvent) throws Exception{
         String id=textId.getText();

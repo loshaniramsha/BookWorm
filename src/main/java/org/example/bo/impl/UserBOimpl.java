@@ -52,4 +52,9 @@ public class UserBOimpl implements UserBO {
             return new Userdto(user.getU_id(),user.getU_name(),user.getEmail(),user.getPassword(),user.getStatus());
         }
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        return userDAO.generateNextId();
+    }
 }

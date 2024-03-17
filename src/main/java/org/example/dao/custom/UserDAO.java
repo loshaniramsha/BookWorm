@@ -5,4 +5,5 @@ import org.example.entity.User;
 
 public interface UserDAO extends CrudDAO<User> {
     User searchByEmail(String mail) throws Exception;
+    String generateNextId() throws Exception;
 }

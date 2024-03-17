@@ -48,6 +48,7 @@ public class BorrowFormController {
         loardcmb();
         loardAllBorrow();
         setCellValueFactory();
+        textid.setText(borrowBO.generateNextId());
     }
 
     private void setCellValueFactory() {
