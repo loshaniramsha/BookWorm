@@ -35,6 +35,8 @@ public class BookFormController {
     public TextField textAuthor;
     public TextField textGenre;
     public TextField textStates;
+    public Button btnClear;
+    public ComboBox cmbStates;
     BookBO bookBO= (BookBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BOOK);
      BranchBO branchBO= (BranchBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BRANCH);
      BorrowBO borrowBO= (BorrowBO) BoFactory.getBoFactory().getBO(BoFactory.BOType.BORROW);
@@ -72,6 +74,11 @@ public class BookFormController {
         for (Branchdto branchdto : allBranch) {
             cmbBranch.getItems().add(branchdto.getBranchId());
         }
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "Available",
+                "Not Available"
+        );
+        cmbStates.setItems(options);
     }
 
  /*   public void searchOnAction(ActionEvent actionEvent) throws Exception {
@@ -132,7 +139,7 @@ public class BookFormController {
        String tittle=textTittle.getText();
        String author=textAuthor.getText();
        String genre=textGenre.getText();
-       String states=textStates.getText();
+       String states=cmbStates.getValue().toString();
        String branch=cmbBranch.getValue().toString();
        Bookdto bookdto=new Bookdto(id,tittle,author,genre,states,branch);
         System.out.println("branch1: "+branch);
