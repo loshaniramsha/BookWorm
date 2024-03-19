@@ -119,7 +119,13 @@ public class DashboardController {
     public void lblNotification(MouseEvent mouseEvent) {
     }
 
-    public void lblSetting(MouseEvent mouseEvent) {
+    public void lblSetting(MouseEvent mouseEvent) throws IOException {
+        AnchorPane anchorPane= FXMLLoader.load(getClass().getResource("/view/ForgotPassword_Form.fxml"));
+        Scene scene=new Scene(anchorPane);
+        Stage stage=(Stage)root.getScene().getWindow();
+        stage.setScene(scene);
+        Stage.getWindows();
+        stage.centerOnScreen();
     }
 
     public void lblLogOut(MouseEvent mouseEvent) throws Exception {

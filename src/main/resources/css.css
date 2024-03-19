@@ -162,4 +162,6 @@
 #textNewPW2:hover{
    -fx-prompt-text-fill: #0f0f10;
 }
-
+#textEmail{
+   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 225, 1), 10, 0, 3, 3);
+}
