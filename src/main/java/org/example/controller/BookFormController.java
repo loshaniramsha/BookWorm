@@ -44,6 +44,7 @@ public class BookFormController {
         loardCmb();
         loardAllBook();
         setCellValueFactory();
+        textId.setText(bookBO.generateNextId());
     }
 
     private void setCellValueFactory() {

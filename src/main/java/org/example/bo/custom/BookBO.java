@@ -13,4 +13,5 @@ boolean deleteBook(String id) throws Exception;
 Bookdto searchBook(String id) throws Exception;
 /*Bookdto searchBook(String title) throws Exception;*/
     List<Bookdto> getAllBook() throws Exception;
+    String generateNextId() throws Exception;
 }

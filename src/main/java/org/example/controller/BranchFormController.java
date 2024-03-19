@@ -26,9 +26,10 @@ public class BranchFormController {
     public TableColumn colid;
     public TableColumn colbranch;
 
-    public void initialize() {
+    public void initialize() throws Exception {
         loardAllBranch();
         setCellValueFactory();
+        textid.setText(branchBO.generateNextId());
     }
 
     private void setCellValueFactory() {

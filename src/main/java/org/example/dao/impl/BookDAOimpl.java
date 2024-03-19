@@ -70,4 +70,52 @@ public class BookDAOimpl implements BookDAO {
        session.close();
        return bookList;
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        // Corrected the query to use OFFSET instead of LIMIT for HQL
+        Object object = session.createQuery("SELECT bookId FROM Book ORDER BY bookId DESC")
+                .setFirstResult(0)
+                .setMaxResults(1)
+                .uniqueResult();
+
+        transaction.commit();
+        session.close();
+
+        if (object != null) {
+            String currentId = object.toString();
+            String[] split = currentId.split("B0");
+
+            int id = Integer.parseInt(split[1]) + 1; // Increment the ID
+            return "B" + String.format("%03d", id); // Format the ID with leading zeros
+        } else {
+            return "B001"; // If no previous ID found, return the default ID
+        }
+    }
+
+/*    public String generateNextId() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Object object = session.createQuery("SELECT branchId FROM Branch ORDER BY branchId DESC LIMIT 1").uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if(object != null) {
+            String CurrentId = object.toString();
+            String[] split = CurrentId.split("B0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            if(id<10) {
+                return "B00" + id;
+            } else {
+                return "B0" + id;
+            }
+        } else {
+            return "B001";
+        }
+    }*/
 }

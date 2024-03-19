@@ -43,4 +43,9 @@ public class BranchBOimpl implements BranchBO {
         }
         return list;
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        return branchDAO.generateNextId();
+    }
 }

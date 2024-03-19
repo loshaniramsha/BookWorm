@@ -20,11 +20,11 @@
          </font>
       </Text>
       <TextField fx:id="textName" layoutX="576.0" layoutY="186.0" onAction="#userNameOnAction" prefHeight="45.0" prefWidth="451.0" promptText="Email" style="-fx-background-radius: 0;" styleClass="-fx-effect: dropshadow" stylesheets="@../css.css" />
-      <Button fx:id="btnLogin" layoutX="660.0" layoutY="376.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="31.0" prefWidth="318.0" style="-fx-background-radius: 50;" stylesheets="@../css.css" text="Sign up" textFill="#f2e9e9">
+      <Button fx:id="btnLogin" layoutX="660.0" layoutY="405.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="31.0" prefWidth="318.0" style="-fx-background-radius: 50;" stylesheets="@../css.css" text="Sign up" textFill="#f2e9e9">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Hyperlink layoutX="772.0" layoutY="484.0" onMouseClicked="#lblforgotPassword" text="Forgot Password" textFill="#1a1a1e">
+      <Hyperlink layoutX="578.0" layoutY="351.0" onMouseClicked="#lblforgotPassword" text="Forgot Password" textFill="#1a1a1e">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -45,31 +45,26 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="56.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We are">
+      <Text fill="#c8cae8" layoutX="56.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We are">
          <font>
             <Font name="Bell MT" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="55.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10 Million People have joined our network.We invite you to joing the us!!!!!" wrappingWidth="389.00732421875">
+      <Text layoutX="65.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10 Million People have joined our network.We invite you to joing the us!!!!!" wrappingWidth="389.00732421875">
          <font>
             <Font name="System Italic" size="15.0" />
          </font>
       </Text>
-      <Text fill="#dad0d0" layoutX="55.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invite Only Right Now...." wrappingWidth="347.10791015625">
+      <Text fill="#dad0d0" layoutX="65.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invite Only Right Now...." wrappingWidth="347.10791015625">
          <font>
             <Font name="Bodoni MT" size="27.0" />
          </font>
       </Text>
-      <Text layoutX="55.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account" wrappingWidth="259.0263671875">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Text>
-      <Hyperlink layoutX="55.0" layoutY="509.0" onMouseClicked="#lblSingUp" prefHeight="40.0" prefWidth="216.0" text="New User? Sing up" textFill="#ebe7e7">
+      <Hyperlink layoutX="730.0" layoutY="527.0" onMouseClicked="#lblSingUp" prefHeight="40.0" prefWidth="216.0" text="New User? Sing up" textFill="#080c4a">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Hyperlink>
-      <Text layoutX="660.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-----------------------  or  --------------------------- ">
+      <Text layoutX="660.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----------------------- or --------------------------- ">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

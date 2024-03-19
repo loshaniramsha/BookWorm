@@ -12,4 +12,5 @@ public interface BranchBO extends SuperBO {
     Branchdto searchBranch(String id) throws Exception;
 
     List<Branchdto> getAllBranch() throws Exception;
+    String generateNextId() throws Exception;
 }

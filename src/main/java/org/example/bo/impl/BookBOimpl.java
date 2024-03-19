@@ -60,4 +60,9 @@ public class BookBOimpl implements BookBO {
      }
     return list;
  }
+
+    @Override
+    public String generateNextId() throws Exception {
+        return bookDAO.generateNextId();
+    }
 }

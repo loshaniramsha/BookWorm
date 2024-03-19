@@ -69,4 +69,29 @@ public class BranchDAOimpl implements BranchDAO {
        session.close();
        return branchList;
     }
+
+    @Override
+    public String generateNextId() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Object object = session.createQuery("SELECT branchId FROM Branch ORDER BY branchId DESC LIMIT 1").uniqueResult();
+        transaction.commit();
+        session.close();
+
+        if(object != null) {
+            String CurrentId = object.toString();
+            String[] split = CurrentId.split("Br0");
+
+            int id = Integer.parseInt(split[1]); //01
+            id++;
+            if(id<10) {
+                return "Br00" + id;
+            } else {
+                return "Br0" + id;
+            }
+        } else {
+            return "Br001";
+        }
+
+    }
 }
