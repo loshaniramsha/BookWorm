@@ -95,27 +95,4 @@ public class BookDAOimpl implements BookDAO {
             return "B001"; // If no previous ID found, return the default ID
         }
     }
-
-/*    public String generateNextId() throws Exception {
-        Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-        Object object = session.createQuery("SELECT branchId FROM Branch ORDER BY branchId DESC LIMIT 1").uniqueResult();
-        transaction.commit();
-        session.close();
-
-        if(object != null) {
-            String CurrentId = object.toString();
-            String[] split = CurrentId.split("B0");
-
-            int id = Integer.parseInt(split[1]); //01
-            id++;
-            if(id<10) {
-                return "B00" + id;
-            } else {
-                return "B0" + id;
-            }
-        } else {
-            return "B001";
-        }
-    }*/
 }
